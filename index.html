@@ -23,10 +23,16 @@ var svg = d3.select("svg");
 var projection = d3.geoAlbersUsa().scale(75);
 var pathGenerator = d3.geoPath().projection(projection);
 
-var sequentialColors = ['#ffffb2','#fecc5c','#fd8d3c','#f03b20','#bd0026'];
+var femaleColors = ['#ffffb2','#fecc5c','#fd8d3c','#f03b20','#bd0026'];
+var blackColors = [ '#f1eef6', '#d7b5d8','#df65b0','#dd1c77','#980043'];
+var blackfemaleColors = ['#ffffcc', '#a1dab4','#41b6c4', '#2c7fb8','#253494' ];
 
-var percentScale = d3.scaleLinear()
-.domain([0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]).range(sequentialColors);
+var femaleScale = d3.scaleLinear()
+.domain([0,5,10,20,40]).range(femaleColors);
+var blackScale = d3.scaleLinear()
+.domain([0,5,10,15,20]).range(blackColors);
+var blackfemaleScale = d3.scaleLinear()
+.domain([0,1,2,3,4]).range(blackfemaleColors);
 
 var states;
 var apcsdata;
@@ -52,9 +58,9 @@ d3.queue()
 		return d.FIPS;
 	});
 
-	showMap(percentScale, "%female", p1);
-	showMap(percentScale, "% black", p2);
-	showMap(percentScale, "%female", p3);
+	showMap(femaleScale, "%female", p1);
+	showMap(blackScale, "% black", p2);
+	showMap(blackfemaleScale, "% Black Females", p3);
 });
 
 function showMap(scale, variable, part) {
