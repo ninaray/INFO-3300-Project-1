@@ -4,24 +4,29 @@
 <script src="http://d3js.org/topojson.v2.min.js"></script>
 <style>
 svg { border: solid #ccc 1px; }
-path.country { fill: #ccc; stroke: #888;; }
+path.country { fill: #ccc; stroke: #fff;; }
 </style>
 
 </style>
 <body>
-<svg height = "1000" width="1000">
+<svg height = "500" width="500">
 
 <script>
 
+// Creating + implementation of female-specific map
 var svg = d3.select("svg");
 
 var projection = d3.geoAlbersUsa().scale(75);
 var pathGenerator = d3.geoPath().projection(projection);
 
-var sequentialColors = ['#edf8fb','#b2e2e2','#66c2a4','#2ca25f','#006d2c'];
+var sequentialColors = ['#ffffb2',
+'#fecc5c',
+'#fd8d3c',
+'#f03b20',
+'#bd0026'];
 
 var percentScale = d3.scaleLinear()
-.domain([0,20,40,60,100]).range(sequentialColors);
+.domain([0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]).range(sequentialColors);
 
 var counties, states;
 var usdaAtlas;
