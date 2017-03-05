@@ -18,10 +18,8 @@ var svg = d3.select("svg");
 var projection = d3.geoAlbersUsa().scale(75);
 var pathGenerator = d3.geoPath().projection(projection);
 
-var divergingColors = ["#d8b365", "#f5f5f5", "#5ab4ac"];
 var sequentialColors = ['#edf8fb','#b2e2e2','#66c2a4','#2ca25f','#006d2c'];
 
-var populationScale = d3.scaleLinear().domain([-5, 0, 5]).range(divergingColors);
 var percentScale = d3.scaleLinear()
 .domain([0,20,40,60,100]).range(sequentialColors);
 
@@ -52,7 +50,7 @@ d3.queue()
 		return d.FIPS;
 	});
 
-	showMap(percentScale, "%female");
+	showMap(percentScale, "% female");
 });
 
 function showMap(scale, variable) {

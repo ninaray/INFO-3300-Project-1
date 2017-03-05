@@ -1,4 +1,4 @@
-FIPS,State,# schools,Total #,yield per teacher,# passed,% passed,# female,# female passed,% female passed,%female,# Black,# Black Passed,% Black passed,% black,# Black Males,# Black Males passed,% Black Male passed,# Black Females,# Black Females passed,% Black Females passed,# Hispanic,# Hispanic passed,% Hispanic passed,# Hispanic Females,# Hispanic Females passed,% Hispanic females passed,% hispanic
+FIPS,State,# schools,Total #,yield per teacher,# passed,% passed,# female,# female passed,% female passed,% female,# Black,# Black Passed,% Black passed,% black,# Black Males,# Black Males passed,% Black Male passed,# Black Females,# Black Females passed,% Black Females passed,# Hispanic,# Hispanic passed,% Hispanic passed,# Hispanic Females,# Hispanic Females passed,% Hispanic females passed,% hispanic
 1,AL,14,97,6.928571429,61,62.88659794,12,10,83.33333333,12.37113402,9,5,55.55555556,9.278350515,8,4,50,1,*,*,2,*,*,0,0,0,2.06185567
 2,AK,2,13,6.5,12,92.30769231,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,*,*,0,0,0,7.692307692
 4,AZ,21,132,6.285714286,86,65.15151515,23,15,65.2173913,17.42424242,1,*,*,0.757575758,1,*,*,0,0,0,21,8,38.0952381,4,*,*,15.90909091
