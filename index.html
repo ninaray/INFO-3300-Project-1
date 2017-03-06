@@ -3,12 +3,11 @@
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="http://d3js.org/topojson.v2.min.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'/>
-    
-<style>
+<link href='https://fonts.googleapis.com/css?family=Exo 2' rel='stylesheet' type='text/css'/>
 
-body{
-    font-family: "Montserrat"; 
-    }    
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+
+<style>  
 
 svg { 
     border: solid #fff 1px; fill: #ccc; stroke: white 1px; }
@@ -17,7 +16,27 @@ svg {
 
 <body>   
 
+<!-- div for main body -->
+<div id="main">
+    
+<h2>Who's taking the AP Computer Science Exam?</h2>
+    
+<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+</p>
+
+</div>    
+    
+<!-- SVGs for USA maps and average statistics -->
+
+<div id="femaletop">Female Test Takers</div>    
+    
 <svg id="p1" height = "600" width="800"></svg>
+    
+<div id="female">
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    </p>
+</div>
+
 <svg id="container1" height = "600" width="350">
 </svg>    
 <svg id="p2" height = "600" width="800"></svg>
@@ -109,7 +128,6 @@ d3.queue()
 	});
 
 	showMap(scale, "%female", p1);
-    // Add percentage circles
 	showMap(scale, "% black", p2);
 	showMap(scale, "% Black Females", p3);
 });
@@ -139,11 +157,135 @@ function showMap(scale, variable, part) {
 
 }
    
+// Linear gradient scales (to use as a legend)
+
+var defs = svg.append("defs");
+
+var linearGradient = defs.append("linearGradient")
+    .attr("id", "linear-gradient");
+    
+linearGradient.selectAll("stop") 
+    .data([                             
+        {offset: "0%", color: "#f1eef6"}, 
+        {offset: "20%", color: "#d7b5d8"},  
+        {offset: "40%", color: "#df65b0"}, 
+        {offset: "60%", color: "#dd1c77"}, 
+        {offset: "80%", color: "#5D000F"}  
+      ])                  
+    .enter().append("stop")
+    .attr("offset", function(d) { return d.offset; })   
+    .attr("stop-color", function(d) { return d.color; });
+
+    
+//Horizontal gradient
+linearGradient
+    .attr("x1", "0%")
+    .attr("y1", "0%")
+    .attr("x2", "100%")
+    .attr("y2", "0%");
+    
+// Gradient for female students
+d3.select("#container1").append("rect")
+    .attr("x", 5)
+    .attr("y", 480)
+	.attr("width", 290)
+	.attr("height", 20)
+	.style("fill", "url(#linear-gradient)");
+    
+//Add corresponding text
+d3.select("#container1").append("text")
+        .attr("x", 2)
+        .attr("y", 515)
+        .attr("font-size", 10)
+        .attr("font-family", "Exo 2")
+        .text("0%")
+        .style("fill", "gray");
+    
+d3.select("#container1").append("text")
+        .attr("y", 515)
+        .attr("x", 288)
+        .attr("font-size", 10)
+        .attr("font-family", "Exo 2")
+        .text("25%+")
+        .style("fill", "gray");
+    
+d3.select("#container1").append("text")
+        .attr("y", 470)
+        .attr("x", 65)
+        .attr("font-size", 10)
+        .attr("font-family", "Exo 2")
+        .text("Percentage of Test-Takers by State")
+        .style("fill", "gray");
+
+// Gradient for black test takers
+d3.select("#container2").append("rect")
+    .attr("x", 5)
+    .attr("y", 480)
+	.attr("width", 290)
+	.attr("height", 20)
+	.style("fill", "url(#linear-gradient)");
+    
+//Add corresponding text
+d3.select("#container2").append("text")
+        .attr("x", 2)
+        .attr("y", 515)
+        .attr("font-size", 10)
+        .attr("font-family", "Exo 2")
+        .text("0%")
+        .style("fill", "gray");
+    
+d3.select("#container2").append("text")
+        .attr("y", 515)
+        .attr("x", 288)
+        .attr("font-size", 10)
+        .attr("font-family", "Exo 2")
+        .text("25%+")
+        .style("fill", "gray");
+    
+d3.select("#container2").append("text")
+        .attr("y", 470)
+        .attr("x", 65)
+        .attr("font-size", 10)
+        .attr("font-family", "Exo 2")
+        .text("Percentage of Test-Takers by State")
+        .style("fill", "gray");
+    
+// Gradient for black female test takers
+d3.select("#container3").append("rect")
+    .attr("x", 5)
+    .attr("y", 480)
+	.attr("width", 290)
+	.attr("height", 20)
+	.style("fill", "url(#linear-gradient)");
+    
+//Add corresponding text
+d3.select("#container3").append("text")
+        .attr("x", 2)
+        .attr("y", 515)
+        .attr("font-size", 10)
+        .attr("font-family", "Exo 2")
+        .text("0%")
+        .style("fill", "gray");
+    
+d3.select("#container3").append("text")
+        .attr("y", 515)
+        .attr("x", 288)
+        .attr("font-size", 10)
+        .attr("font-family", "Exo 2")
+        .text("25%+")
+        .style("fill", "gray");
+    
+d3.select("#container3").append("text")
+        .attr("y", 470)
+        .attr("x", 65)
+        .attr("font-size", 10)
+        .attr("font-family", "Exo 2")
+        .text("Percentage of Test-Takers by State")
+        .style("fill", "gray");
+    
 </script>
+    
 </body>
-
-
-
-
-
+    
+<!-- Linear gradient created with help of https://www.visualcinnamon.com/2016/05/smooth-color-legend-d3-svg-gradient.html -->    
 </html>
