@@ -35,15 +35,35 @@ svg {
 <div id="female">
     <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     </p>
+    
+    <svg id="container1" height = "600" width="350">
+    </svg> 
 </div>
-
-<svg id="container1" height = "600" width="350">
-</svg>    
+   
+<div id="blacktop">African-American Test Takers</div>      
+    
 <svg id="p2" height = "600" width="800"></svg>
-<svg id="container2" height = "600" width="350">
-</svg>
-<svg id="p3" height = "600" width="800"></svg>
-<svg id="container3" height = "600" width="350">
+    
+<div id="black">
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    </p>
+    
+    <svg id="container2" height = "600" width="350">
+    </svg>
+</div>   
+    
+<div id="blacktop">African-American Female Test Takers</div>    
+    
+<svg id="p3" height = "600" width="800">
+    
+<div id="blackfemale">
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    </p>
+    
+     <svg id="container3" height = "600" width="350">
+    </svg>
+        
+    </div>
 </svg>
     
 <script>
@@ -51,27 +71,27 @@ svg {
 // Average percentage for female student map    
 d3.select("#container1").append("text")
         .attr("x", 0)
-        .attr("y", 346)
+        .attr("y", 146)
         .attr("font-size", 150)
         .text("27%")
         .style("fill", "black");   
 d3.select("#container1").append("text")
         .attr("x", 30)
-        .attr("y", 390)
+        .attr("y", 190)
         .attr("font-size", 30)
         .text("National Average")
-        .style("fill", "black");   
+        .style("fill", "black");
     
 // Average percentage for black student map
 d3.select("#container2").append("text")
         .attr("x", 0)
-        .attr("y", 346)
+        .attr("y", 146)
         .attr("font-size", 150)
         .text("3.4%")
         .style("fill", "black");   
 d3.select("#container2").append("text")
         .attr("x", 30)
-        .attr("y", 390)
+        .attr("y", 190)
         .attr("font-size", 30)
         .text("National Average")
         .style("fill", "black");
@@ -157,7 +177,7 @@ function showMap(scale, variable, part) {
 
 }
    
-// Linear gradient scales (to use as a legend)
+// Beginning of linear gradient scales (to use as a legend)
 
 var defs = svg.append("defs");
 
@@ -185,104 +205,105 @@ linearGradient
     .attr("y2", "0%");
     
 // Gradient for female students
-d3.select("#container1").append("rect")
-    .attr("x", 5)
-    .attr("y", 480)
+d3.select("#p1").append("rect")
+    .attr("x", 385)
+    .attr("y", 560)
 	.attr("width", 290)
 	.attr("height", 20)
 	.style("fill", "url(#linear-gradient)");
     
 //Add corresponding text
-d3.select("#container1").append("text")
-        .attr("x", 2)
-        .attr("y", 515)
+d3.select("#p1").append("text")
+        .attr("x", 382)
+        .attr("y", 595)
         .attr("font-size", 10)
         .attr("font-family", "Exo 2")
         .text("0%")
         .style("fill", "gray");
     
-d3.select("#container1").append("text")
-        .attr("y", 515)
-        .attr("x", 288)
+d3.select("#p1").append("text")
+        .attr("x", 668)
+        .attr("y", 595)
         .attr("font-size", 10)
         .attr("font-family", "Exo 2")
         .text("25%+")
         .style("fill", "gray");
     
-d3.select("#container1").append("text")
-        .attr("y", 470)
-        .attr("x", 65)
+d3.select("#p1").append("text")
+        .attr("x", 438)
+        .attr("y", 550)
         .attr("font-size", 10)
         .attr("font-family", "Exo 2")
         .text("Percentage of Test-Takers by State")
         .style("fill", "gray");
 
 // Gradient for black test takers
-d3.select("#container2").append("rect")
-    .attr("x", 5)
-    .attr("y", 480)
+d3.select("#p2").append("rect")
+    .attr("x", 385)
+    .attr("y", 560)
 	.attr("width", 290)
 	.attr("height", 20)
 	.style("fill", "url(#linear-gradient)");
     
 //Add corresponding text
-d3.select("#container2").append("text")
-        .attr("x", 2)
-        .attr("y", 515)
+d3.select("#p2").append("text")
+        .attr("x", 382)
+        .attr("y", 595)
         .attr("font-size", 10)
         .attr("font-family", "Exo 2")
         .text("0%")
         .style("fill", "gray");
     
-d3.select("#container2").append("text")
-        .attr("y", 515)
-        .attr("x", 288)
+d3.select("#p2").append("text")
+        .attr("x", 668)
+        .attr("y", 595)
         .attr("font-size", 10)
         .attr("font-family", "Exo 2")
         .text("25%+")
         .style("fill", "gray");
     
-d3.select("#container2").append("text")
-        .attr("y", 470)
-        .attr("x", 65)
+d3.select("#p2").append("text")
+        .attr("x", 438)
+        .attr("y", 550)
         .attr("font-size", 10)
         .attr("font-family", "Exo 2")
         .text("Percentage of Test-Takers by State")
         .style("fill", "gray");
     
 // Gradient for black female test takers
-d3.select("#container3").append("rect")
-    .attr("x", 5)
-    .attr("y", 480)
+d3.select("#p3").append("rect")
+    .attr("x", 385)
+    .attr("y", 560)
 	.attr("width", 290)
 	.attr("height", 20)
 	.style("fill", "url(#linear-gradient)");
     
 //Add corresponding text
-d3.select("#container3").append("text")
-        .attr("x", 2)
-        .attr("y", 515)
+d3.select("#p3").append("text")
+        .attr("x", 382)
+        .attr("y", 595)
         .attr("font-size", 10)
         .attr("font-family", "Exo 2")
         .text("0%")
         .style("fill", "gray");
     
-d3.select("#container3").append("text")
-        .attr("y", 515)
-        .attr("x", 288)
+d3.select("#p3").append("text")
+        .attr("x", 668)
+        .attr("y", 595)
         .attr("font-size", 10)
         .attr("font-family", "Exo 2")
         .text("25%+")
         .style("fill", "gray");
     
-d3.select("#container3").append("text")
-        .attr("y", 470)
-        .attr("x", 65)
+d3.select("#p3").append("text")
+        .attr("x", 438)
+        .attr("y", 550)
         .attr("font-size", 10)
         .attr("font-family", "Exo 2")
         .text("Percentage of Test-Takers by State")
         .style("fill", "gray");
     
+// End of linear gradient scales    
 </script>
     
 </body>
