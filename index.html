@@ -2,19 +2,75 @@
 <title>Sean Yu (sy334) Project1-Sample</title>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="http://d3js.org/topojson.v2.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'/>
+    
 <style>
+
+body{
+    font-family: "Montserrat"; 
+    }    
+
 svg { 
-    border: solid #fff 1px; fill: #ccc; }
+    border: solid #fff 1px; fill: #ccc; stroke: white 1px; }
+  
 </style>
 
-</style>
-<body>
+<body>   
+
 <svg id="p1" height = "600" width="800"></svg>
+<svg id="container1" height = "600" width="350">
+</svg>    
 <svg id="p2" height = "600" width="800"></svg>
+<svg id="container2" height = "600" width="350">
+</svg>
 <svg id="p3" height = "600" width="800"></svg>
-
+<svg id="container3" height = "600" width="350">
+</svg>
+    
 <script>
-
+    
+// Average percentage for female student map    
+d3.select("#container1").append("text")
+        .attr("x", 0)
+        .attr("y", 346)
+        .attr("font-size", 150)
+        .text("27%")
+        .style("fill", "black");   
+d3.select("#container1").append("text")
+        .attr("x", 30)
+        .attr("y", 390)
+        .attr("font-size", 30)
+        .text("National Average")
+        .style("fill", "black");   
+    
+// Average percentage for black student map
+d3.select("#container2").append("text")
+        .attr("x", 0)
+        .attr("y", 346)
+        .attr("font-size", 150)
+        .text("3.4%")
+        .style("fill", "black");   
+d3.select("#container2").append("text")
+        .attr("x", 30)
+        .attr("y", 390)
+        .attr("font-size", 30)
+        .text("National Average")
+        .style("fill", "black");
+    
+// Average percentage for black female student map
+d3.select("#container3").append("text")
+        .attr("x", 0)
+        .attr("y", 346)
+        .attr("font-size", 110)
+        .text("0.76%")
+        .style("fill", "black");   
+d3.select("#container3").append("text")
+        .attr("x", 30)
+        .attr("y", 390)
+        .attr("font-size", 30)
+        .text("National Average")
+        .style("fill", "black");
+    
 var p1 = d3.select("#p1");
 var p2 = d3.select("#p2");
 var p3 = d3.select("#p3");
@@ -23,16 +79,10 @@ var svg = d3.select("svg");
 var projection = d3.geoAlbersUsa().scale(75);
 var pathGenerator = d3.geoPath().projection(projection);
 
-var femaleColors = ['#ffffb2','#fecc5c','#fd8d3c','#f03b20','#bd0026'];
-var blackColors = [ '#f1eef6', '#d7b5d8','#df65b0','#dd1c77','#980043'];
-var blackfemaleColors = ['#ffffcc', '#a1dab4','#41b6c4', '#2c7fb8','#253494' ];
+var colors = [ '#f1eef6', '#d7b5d8','#df65b0','#dd1c77','#980043'];
 
-var femaleScale = d3.scaleLinear()
-.domain([0,5,10,15,20,25,30,35,40]).range(femaleColors);
-var blackScale = d3.scaleLinear()
-.domain([0,5,10,15,20]).range(blackColors);
-var blackfemaleScale = d3.scaleLinear()
-.domain([0,1,2,3,4]).range(blackfemaleColors);
+var scale = d3.scaleLinear()
+.domain([0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100]).range(colors);
 
 var states;
 var apcsdata;
@@ -58,10 +108,10 @@ d3.queue()
 		return d.FIPS;
 	});
 
-	showMap(femaleScale, "%female", p1);
+	showMap(scale, "%female", p1);
     // Add percentage circles
-	showMap(blackScale, "% black", p2);
-	showMap(blackfemaleScale, "% Black Females", p3);
+	showMap(scale, "% black", p2);
+	showMap(scale, "% Black Females", p3);
 });
 
 function showMap(scale, variable, part) {
@@ -74,6 +124,7 @@ function showMap(scale, variable, part) {
 	var paths = p1.selectAll("path.country").data(states.features);
 	paths.enter().append("path").attr("class", "country")
 	.merge(paths)
+    .style("stroke", "white")
 	.style("fill", function (state) {
 		var stateData = apcsdata.get(state.id);
 		if (stateData) {
@@ -87,14 +138,8 @@ function showMap(scale, variable, part) {
 
 
 }
-
+   
 </script>
-
-
-
-</svg>
-
-
 </body>
 
 
