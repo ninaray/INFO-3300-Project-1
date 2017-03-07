@@ -17,7 +17,7 @@ svg {
 body{
     font-family: "Catamaran";
     letter-spacing: 0px;
-
+    color: #2a2a2a;
     }
 
 span {
@@ -31,14 +31,16 @@ span {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
+    margin-top: 10px;
+    font-size: 120%;
 }
 
 #main h2 {
     font-weight: bolder;
     font-size: 4em;
     letter-spacing: 1px;
-
+    line-height: 100px;
+    border-bottom: 3px solid #fcdbe9;
 }
 
 /** FEMALE DIV */
@@ -105,14 +107,14 @@ span {
 
 <h2>Who's taking <br>the AP Computer Science Exam?</h2>
 
-<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+<p>Every year in May, hundreds of students across the nation sit down to take the AP Computer Science A Exam. Which demographics consistently show out every year, and which demographics are left behind? See how the data varies between both race and gender from state to state.
 </p>
 
 </div>
 
 <!-- SVGs for USA maps and average statistics -->
 
-<div id="femaletop">Female Test Takers</div>
+<div id="femaletop">Female Test Takers in 2012</div>
 
 <svg id="p1" height = "600" width="800"></svg>
 
@@ -124,7 +126,7 @@ span {
     </svg>
 </div>
 
-<div id="blacktop">African American Test Takers</div>
+<div id="blacktop">African American Test Takers in 2012</div>
 
 <svg id="p2" height = "600" width="800"></svg>
 
@@ -135,7 +137,7 @@ span {
     </svg>
 </div>
 
-<div id="blacktop">African American Female Test Takers</div>
+<div id="blacktop">African American Female Test Takers in 2012</div>
 
 <svg id="p3" height = "600" width="800">
 
@@ -157,7 +159,7 @@ d3.select("#container1").append("text")
         .attr("font-size", 150)
         .text("19%")
         .style("font-family", "Roboto")
-        .style("fill", "black");
+        .style("fill", "#2a2a2a");
     
 d3.select("#container1").append("rect")
     .attr("x", 47)
@@ -174,7 +176,7 @@ d3.select("#container1").append("text")
         .style("font-weight", 100)
         .style("letter-spacing", 4)
         .style("font-family", "Alegreya Sans SC")
-        .style("fill", "#e4e4");
+        .style("fill", "gray");
 
 // Average percentage for black student map
 d3.select("#container2").append("text")
@@ -200,7 +202,7 @@ d3.select("#container2").append("text")
         .style("font-weight", 100)
         .style("letter-spacing", 4)
         .style("font-family", "Alegreya Sans SC")
-        .style("fill", "#e4e4");
+        .style("fill", "gray");
 
 // Average percentage for black female student map
 d3.select("#container3").append("text")
@@ -226,7 +228,7 @@ d3.select("#container3").append("text")
         .style("font-weight", 100)
         .style("letter-spacing", 4)
         .style("font-family", "Alegreya Sans SC")
-        .style("fill", "#e4e4");
+        .style("fill", "gray");
 
 var p1 = d3.select("#p1");
 var p2 = d3.select("#p2");
