@@ -1,8 +1,10 @@
 <html>
-<title>Sean Yu (sy334) Project1-Sample</title>
+<title>AP Computer Science Participation Rates</title>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="http://d3js.org/topojson.v2.min.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Catamaran' rel='stylesheet' type='text/css'/>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'/>
+<link href='https://fonts.googleapis.com/css?family=Alegreya Sans SC' rel='stylesheet' type='text/css'/>
 
 <!--<link rel="stylesheet" type="text/css" href="styles/style.css">-->
 
@@ -14,8 +16,16 @@ svg {
 
 body{
     font-family: "Catamaran";
+    letter-spacing: 0px;
+
     }
 
+span {
+    font-weight: bolder;
+    font-size: 110%;
+    border-bottom: 3px solid #fcdbe9;    
+    }    
+    
 /** MAIN DIV */
 #main {
     width: 50%;
@@ -46,6 +56,7 @@ body{
     height: 600px;
     margin-right: 20px;
     margin-top: 50px;
+    line-height: 30px;
     float: right;
 }
 
@@ -63,6 +74,7 @@ body{
     height: 600px;
     margin-right: 20px;
     margin-top: 50px;
+    line-height: 30px;
     float: right;
 }
 
@@ -80,6 +92,7 @@ body{
     height: 600px;
     margin-right: 20px;
     margin-top: 50px;
+    line-height: 30px;
     float: right;
 }
 
@@ -104,30 +117,30 @@ body{
 <svg id="p1" height = "600" width="800"></svg>
 
 <div id="female">
-    <p>Across the United States, female student participation in the 2012 AP Computer Science Exam varied by the hundreds. <b>Tennessee</b> had the highest female participation rates at <b>31.25%</b>. It's next-door neighbor, <b>Arkansas</b>, was conversely one of the states with the lowest participation rate at <b>0%</b>.
+    <p>Across the United States, female student participation in the 2012 AP Computer Science Exam varied by the hundreds. <span>Tennessee</span> had the highest female participation rates at <span>31.25%</span>. It's next-door neighbor, <span>Arkansas</span>, was conversely one of the states with the lowest participation rate at <span>0%</span>. Below is the national average percentage of female students who took the 2012 exam.
     </p>
 
     <svg id="container1" height = "600" width="350">
     </svg>
 </div>
 
-<div id="blacktop">African-American Test Takers</div>
+<div id="blacktop">African American Test Takers</div>
 
 <svg id="p2" height = "600" width="800"></svg>
 
 <div id="black">
-    <p>Black student participation in the 2012 AP Computer Science Exam varied greatly by region. While souther states including <b>Georgia</b> and <b>Florida</b> had the high black student participation rates over <b>15%</b>. States in other regions had black student participation rates lower than 5%  </p>
+    <p>African American student participation in the 2012 AP Computer Science Exam varied greatly by region. Southern states, including <span>Georgia</span> and <span>Florida</span>, had the highest student participation rates over <span>15%</span>. Meanwhile, states in other regions had participation rates lower than <span>5%.</span> Below is the national average percentage of African American students who took the 2012 exam.</p>
 
     <svg id="container2" height = "600" width="350">
     </svg>
 </div>
 
-<div id="blacktop">African-American Female Test Takers</div>
+<div id="blacktop">African American Female Test Takers</div>
 
 <svg id="p3" height = "600" width="800">
 
 <div id="blackfemale">
-    <p>In 25 states, no african-american female student participated in 2012 AP Computer Science Exam. In only three states, <b>Tenessee</b>, <b>Louisiana</b>, and <b>South Carolina</b>, African-American female students' participation rates were higher than 4%.</p>
+    <p><span>In 25 states, not a single African American female student</span> took the 2012 AP Computer Science Exam. In only three states, <span>Tenessee</span>, <span>Louisiana</span>, and <span>South Carolina</span>, African American female students' participation rates were higher than <span>4%</span>. Below is the national average percentage of African American female students who took the 2012 exam.</p>
 
      <svg id="container3" height = "600" width="350">
     </svg>
@@ -139,45 +152,81 @@ body{
 
 // Average percentage for female student map
 d3.select("#container1").append("text")
-        .attr("x", 0)
+        .attr("x", 47)
         .attr("y", 146)
         .attr("font-size", 150)
         .text("19%")
+        .style("font-family", "Roboto")
         .style("fill", "black");
+    
+d3.select("#container1").append("rect")
+    .attr("x", 47)
+    .attr("y", 170)
+	.attr("width", 290)
+	.attr("height", 20)
+	.style("fill", "fcdbe9");
+    
 d3.select("#container1").append("text")
-        .attr("x", 30)
-        .attr("y", 190)
+        .attr("x", 52)
+        .attr("y", 220)
         .attr("font-size", 30)
-        .text("National Average")
-        .style("fill", "black");
+        .text("national average")
+        .style("font-weight", 100)
+        .style("letter-spacing", 4)
+        .style("font-family", "Alegreya Sans SC")
+        .style("fill", "#e4e4");
 
 // Average percentage for black student map
 d3.select("#container2").append("text")
-        .attr("x", 0)
+        .attr("x", 33)
         .attr("y", 146)
         .attr("font-size", 150)
         .text("4.1%")
+        .style("font-family", "Roboto")
         .style("fill", "black");
+
+d3.select("#container2").append("rect")
+    .attr("x", 47)
+    .attr("y", 170)
+	.attr("width", 290)
+	.attr("height", 20)
+	.style("fill", "fcdbe9");
+    
 d3.select("#container2").append("text")
-        .attr("x", 30)
-        .attr("y", 190)
+        .attr("x", 52)
+        .attr("y", 220)
         .attr("font-size", 30)
-        .text("National Average")
-        .style("fill", "black");
+        .text("national average")
+        .style("font-weight", 100)
+        .style("letter-spacing", 4)
+        .style("font-family", "Alegreya Sans SC")
+        .style("fill", "#e4e4");
 
 // Average percentage for black female student map
 d3.select("#container3").append("text")
-        .attr("x", 0)
+        .attr("x", 53)
         .attr("y", 146)
         .attr("font-size", 130)
-        .text("0.16%")
+        .text(".16%")
+        .style("font-family", "Roboto")
         .style("fill", "black");
+    
+d3.select("#container3").append("rect")
+    .attr("x", 47)
+    .attr("y", 170)
+	.attr("width", 290)
+	.attr("height", 20)
+	.style("fill", "fcdbe9");
+    
 d3.select("#container3").append("text")
-        .attr("x", 30)
-        .attr("y", 190)
+        .attr("x", 52)
+        .attr("y", 220)
         .attr("font-size", 30)
-        .text("National Average")
-        .style("fill", "black");
+        .text("national average")
+        .style("font-weight", 100)
+        .style("letter-spacing", 4)
+        .style("font-family", "Alegreya Sans SC")
+        .style("fill", "#e4e4");
 
 var p1 = d3.select("#p1");
 var p2 = d3.select("#p2");
@@ -296,24 +345,24 @@ d3.select("#p1").append("rect")
 d3.select("#p1").append("text")
         .attr("x", 382)
         .attr("y", 595)
-        .attr("font-size", 10)
-        .attr("font-family", "Catamaran")
+        .attr("font-size", 12)
+        .attr("font-family", "Roboto")
         .text("0%")
         .style("fill", "gray");
 
 d3.select("#p1").append("text")
         .attr("x", 668)
         .attr("y", 595)
-        .attr("font-size", 10)
-        .attr("font-family", "Catamaran")
+        .attr("font-size", 12)
+        .attr("font-family", "Roboto")
         .text("30%+")
         .style("fill", "gray");
 
 d3.select("#p1").append("text")
-        .attr("x", 438)
+        .attr("x", 422)
         .attr("y", 550)
-        .attr("font-size", 10)
-        .attr("font-family", "Catamaran")
+        .attr("font-size", 14)
+        .attr("font-family", "Roboto")
         .text("Percentage of Test-Takers by State")
         .style("fill", "gray");
 
@@ -329,24 +378,24 @@ d3.select("#p2").append("rect")
 d3.select("#p2").append("text")
         .attr("x", 382)
         .attr("y", 595)
-        .attr("font-size", 10)
-        .attr("font-family", "Catamaran")
+        .attr("font-size", 12)
+        .attr("font-family", "Roboto")
         .text("0%")
         .style("fill", "gray");
 
 d3.select("#p2").append("text")
         .attr("x", 668)
         .attr("y", 595)
-        .attr("font-size", 10)
-        .attr("font-family", "Catamaran")
+        .attr("font-size", 12)
+        .attr("font-family", "Roboto")
         .text("16%+")
         .style("fill", "gray");
 
 d3.select("#p2").append("text")
-        .attr("x", 438)
+        .attr("x", 422)
         .attr("y", 550)
-        .attr("font-size", 10)
-        .attr("font-family", "Catamaran")
+        .attr("font-size", 14)
+        .attr("font-family", "Roboto")
         .text("Percentage of Test-Takers by State")
         .style("fill", "gray");
 
@@ -362,24 +411,24 @@ d3.select("#p3").append("rect")
 d3.select("#p3").append("text")
         .attr("x", 382)
         .attr("y", 595)
-        .attr("font-size", 10)
-        .attr("font-family", "Catamaran")
+        .attr("font-size", 12)
+        .attr("font-family", "Roboto")
         .text("0%")
         .style("fill", "gray");
 
 d3.select("#p3").append("text")
         .attr("x", 668)
         .attr("y", 595)
-        .attr("font-size", 10)
-        .attr("font-family", "Catamaran")
+        .attr("font-size", 12)
+        .attr("font-family", "Roboto")
         .text("4%+")
         .style("fill", "gray");
 
 d3.select("#p3").append("text")
-        .attr("x", 438)
+        .attr("x", 422)
         .attr("y", 550)
-        .attr("font-size", 10)
-        .attr("font-family", "Catamaran")
+        .attr("font-size", 14)
+        .attr("font-family", "Roboto")
         .text("Percentage of Test-Takers by State")
         .style("fill", "gray");
 
