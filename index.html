@@ -2,16 +2,86 @@
 <title>Sean Yu (sy334) Project1-Sample</title>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="http://d3js.org/topojson.v2.min.js"></script>
-<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'/>
-<link href='https://fonts.googleapis.com/css?family=Exo 2' rel='stylesheet' type='text/css'/>
+<link href='https://fonts.googleapis.com/css?family=Catamaran' rel='stylesheet' type='text/css'/>
 
-<link rel="stylesheet" type="text/css" href="styles/style.css">
+<!--<link rel="stylesheet" type="text/css" href="styles/style.css">-->
 
 <style>  
 
 svg { 
     border: solid #fff 1px; fill: #ccc; stroke: white 1px; }
   
+body{
+    font-family: "Catamaran"; 
+    }  
+
+/** MAIN DIV */
+#main {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+#main h2 {
+    font-weight: bolder;
+    font-size: 4em;
+    letter-spacing: 1px;
+
+}
+
+/** FEMALE DIV */
+#femaletop {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    margin-top: 60px;
+    margin-bottom: 0px;
+    letter-spacing: 1px;
+}
+
+#female {
+    width: 400px;
+    height: 600px;
+    margin-right: 20px;
+    margin-top: 50px;
+    float: right;
+}
+
+/** BLACK DIV */
+#blacktop {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    margin-top: 60px;
+    letter-spacing: 1px;
+}
+
+#black {
+    width: 400px;
+    height: 600px;
+    margin-right: 20px;
+    margin-top: 50px;
+    float: right;
+}
+
+/** BLACK FEMALE DIV */
+#blackfemaletop {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    margin-top: 60px;
+    letter-spacing: 1px;
+}
+
+#blackfemale {
+    width: 400px;
+    height: 600px;
+    margin-right: 20px;
+    margin-top: 50px;
+    float: right;
+}    
+    
 </style>
 
 <body>   
@@ -33,7 +103,7 @@ svg {
 <svg id="p1" height = "600" width="800"></svg>
     
 <div id="female">
-    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    <p>Across the United States, female student participation in the 2012 AP Computer Science Exam varied by the hundreds. <b>Tennessee</b> had one of the highest participation rates at <b>31.25%</b>. It's next-door neighbor, <b>Arkansas</b>, was conversely one of the states with the lowest participation rate at <b>0%</b>.
     </p>
     
     <svg id="container1" height = "600" width="350">
@@ -99,13 +169,13 @@ d3.select("#container2").append("text")
 // Average percentage for black female student map
 d3.select("#container3").append("text")
         .attr("x", 0)
-        .attr("y", 346)
+        .attr("y", 146)
         .attr("font-size", 110)
         .text("0.76%")
         .style("fill", "black");   
 d3.select("#container3").append("text")
         .attr("x", 30)
-        .attr("y", 390)
+        .attr("y", 190)
         .attr("font-size", 30)
         .text("National Average")
         .style("fill", "black");
@@ -217,7 +287,7 @@ d3.select("#p1").append("text")
         .attr("x", 382)
         .attr("y", 595)
         .attr("font-size", 10)
-        .attr("font-family", "Exo 2")
+        .attr("font-family", "Catamaran")
         .text("0%")
         .style("fill", "gray");
     
@@ -225,7 +295,7 @@ d3.select("#p1").append("text")
         .attr("x", 668)
         .attr("y", 595)
         .attr("font-size", 10)
-        .attr("font-family", "Exo 2")
+        .attr("font-family", "Catamaran")
         .text("25%+")
         .style("fill", "gray");
     
@@ -233,7 +303,7 @@ d3.select("#p1").append("text")
         .attr("x", 438)
         .attr("y", 550)
         .attr("font-size", 10)
-        .attr("font-family", "Exo 2")
+        .attr("font-family", "Catamaran")
         .text("Percentage of Test-Takers by State")
         .style("fill", "gray");
 
@@ -250,7 +320,7 @@ d3.select("#p2").append("text")
         .attr("x", 382)
         .attr("y", 595)
         .attr("font-size", 10)
-        .attr("font-family", "Exo 2")
+        .attr("font-family", "Catamaran")
         .text("0%")
         .style("fill", "gray");
     
@@ -258,7 +328,7 @@ d3.select("#p2").append("text")
         .attr("x", 668)
         .attr("y", 595)
         .attr("font-size", 10)
-        .attr("font-family", "Exo 2")
+        .attr("font-family", "Catamaran")
         .text("25%+")
         .style("fill", "gray");
     
@@ -266,7 +336,7 @@ d3.select("#p2").append("text")
         .attr("x", 438)
         .attr("y", 550)
         .attr("font-size", 10)
-        .attr("font-family", "Exo 2")
+        .attr("font-family", "Catamaran")
         .text("Percentage of Test-Takers by State")
         .style("fill", "gray");
     
@@ -283,7 +353,7 @@ d3.select("#p3").append("text")
         .attr("x", 382)
         .attr("y", 595)
         .attr("font-size", 10)
-        .attr("font-family", "Exo 2")
+        .attr("font-family", "Catamaran")
         .text("0%")
         .style("fill", "gray");
     
@@ -291,7 +361,7 @@ d3.select("#p3").append("text")
         .attr("x", 668)
         .attr("y", 595)
         .attr("font-size", 10)
-        .attr("font-family", "Exo 2")
+        .attr("font-family", "Catamaran")
         .text("25%+")
         .style("fill", "gray");
     
@@ -299,7 +369,7 @@ d3.select("#p3").append("text")
         .attr("x", 438)
         .attr("y", 550)
         .attr("font-size", 10)
-        .attr("font-family", "Exo 2")
+        .attr("font-family", "Catamaran")
         .text("Percentage of Test-Takers by State")
         .style("fill", "gray");
     
