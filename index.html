@@ -187,7 +187,7 @@ var svg = d3.select("svg");
 var projection = d3.geoAlbersUsa().scale(75);
 var pathGenerator = d3.geoPath().projection(projection);
 
-var colors = [ '#fcdbe9','#ffcee3','#ffc6de','#ff82b6','#ff89b9','#ff599e','#ff3589','#ff1475','#4c001f','#26000f'];
+var colors = [ '#fcdbe9','#ffcee3','#ffc6de','#ff82b6','#ff63a4','#ff599e','#ff3589','#ff1475','#4c001f','#26000f'];
 
 var fscale = d3.scaleLinear()
 .domain([0,3,6,9,12,15,18,21,24,32]).range(colors);
@@ -265,7 +265,7 @@ linearGradient.selectAll("stop")
         {offset: "10%", color: "#ffcee3"},
         {offset: "20%", color: "#ffc6de"},
         {offset: "30%", color: "#ff82b6"},
-        {offset: "40%", color: "#ff89b9"},
+        {offset: "40%", color: "#ff63a4"},
         {offset: "50%", color: "#ff599e"},
         {offset: "60%", color: "#ff3589"},
         {offset: "70%", color: "#ff1475"},
