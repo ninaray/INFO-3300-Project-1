@@ -6,14 +6,15 @@
 
 <!--<link rel="stylesheet" type="text/css" href="styles/style.css">-->
 
-<style>  
+<style>
 
-svg { 
+svg {
     border: solid #fff 1px; fill: #ccc; stroke: white 1px; }
-  
+
+
 body{
-    font-family: "Catamaran"; 
-    }  
+    font-family: "Catamaran";
+    }
 
 /** MAIN DIV */
 #main {
@@ -80,106 +81,104 @@ body{
     margin-right: 20px;
     margin-top: 50px;
     float: right;
-}    
-    
+}
+
 </style>
 
-<body>   
+<body>
 
 <!-- div for main body -->
 <div id="main">
-    
-<h2>Who's taking the AP Computer Science Exam?</h2>
-    
+
+<h2>Who's taking <br>the AP Computer Science Exam?</h2>
+
 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 </p>
 
-</div>    
-    
+</div>
+
 <!-- SVGs for USA maps and average statistics -->
 
-<div id="femaletop">Female Test Takers</div>    
-    
+<div id="femaletop">Female Test Takers</div>
+
 <svg id="p1" height = "600" width="800"></svg>
-    
+
 <div id="female">
-    <p>Across the United States, female student participation in the 2012 AP Computer Science Exam varied by the hundreds. <b>Tennessee</b> had one of the highest participation rates at <b>31.25%</b>. It's next-door neighbor, <b>Arkansas</b>, was conversely one of the states with the lowest participation rate at <b>0%</b>.
+    <p>Across the United States, female student participation in the 2012 AP Computer Science Exam varied by the hundreds. <b>Tennessee</b> had the highest female participation rates at <b>31.25%</b>. It's next-door neighbor, <b>Arkansas</b>, was conversely one of the states with the lowest participation rate at <b>0%</b>.
     </p>
-    
+
     <svg id="container1" height = "600" width="350">
-    </svg> 
+    </svg>
 </div>
-   
-<div id="blacktop">African-American Test Takers</div>      
-    
+
+<div id="blacktop">African-American Test Takers</div>
+
 <svg id="p2" height = "600" width="800"></svg>
-    
+
 <div id="black">
-    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-    </p>
-    
+    <p>Black student participation in the 2012 AP Computer Science Exam varied greatly by region. While souther states including <b>Georgia</b> and <b>Florida</b> had the high black student participation rates over <b>15%</b>. States in other regions had black student participation rates lower than 5%  </p>
+
     <svg id="container2" height = "600" width="350">
     </svg>
-</div>   
-    
-<div id="blacktop">African-American Female Test Takers</div>    
-    
+</div>
+
+<div id="blacktop">African-American Female Test Takers</div>
+
 <svg id="p3" height = "600" width="800">
-    
+
 <div id="blackfemale">
-    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-    </p>
-    
+    <p>In 25 states, no african-american female student participated in 2012 AP Computer Science Exam. In only three states, <b>Tenessee</b>, <b>Louisiana</b>, and <b>South Carolina</b>, African-American female students' participation rates were higher than 4%.</p>
+
      <svg id="container3" height = "600" width="350">
     </svg>
-        
+
     </div>
 </svg>
-    
+
 <script>
-    
-// Average percentage for female student map    
+
+// Average percentage for female student map
 d3.select("#container1").append("text")
         .attr("x", 0)
         .attr("y", 146)
         .attr("font-size", 150)
-        .text("27%")
-        .style("fill", "black");   
+        .text("19%")
+        .style("fill", "black");
 d3.select("#container1").append("text")
         .attr("x", 30)
         .attr("y", 190)
         .attr("font-size", 30)
         .text("National Average")
         .style("fill", "black");
-    
+
 // Average percentage for black student map
 d3.select("#container2").append("text")
         .attr("x", 0)
         .attr("y", 146)
         .attr("font-size", 150)
-        .text("3.4%")
-        .style("fill", "black");   
+        .text("4.1%")
+        .style("fill", "black");
 d3.select("#container2").append("text")
         .attr("x", 30)
         .attr("y", 190)
         .attr("font-size", 30)
         .text("National Average")
         .style("fill", "black");
-    
+
 // Average percentage for black female student map
 d3.select("#container3").append("text")
         .attr("x", 0)
         .attr("y", 146)
-        .attr("font-size", 110)
-        .text("0.76%")
-        .style("fill", "black");   
+        .attr("font-size", 130)
+        .text("0.16%")
+        .style("fill", "black");
 d3.select("#container3").append("text")
         .attr("x", 30)
         .attr("y", 190)
         .attr("font-size", 30)
         .text("National Average")
         .style("fill", "black");
-    
+
 var p1 = d3.select("#p1");
 var p2 = d3.select("#p2");
 var p3 = d3.select("#p3");
@@ -188,10 +187,16 @@ var svg = d3.select("svg");
 var projection = d3.geoAlbersUsa().scale(75);
 var pathGenerator = d3.geoPath().projection(projection);
 
-var colors = [ '#f1eef6', '#d7b5d8','#df65b0','#dd1c77','#980043'];
+var colors = [ '#fcdbe9','#ffcee3','#ffc6de','#ff82b6','#ff89b9','#ff599e','#ff3589','#ff1475','#4c001f','#26000f'];
 
-var scale = d3.scaleLinear()
-.domain([0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100]).range(colors);
+var fscale = d3.scaleLinear()
+.domain([0,3,6,9,12,15,18,21,24,32]).range(colors);
+
+var bscale = d3.scaleLinear()
+.domain([0,1,2,3,4,5,6,7,8,17]).range(colors);
+
+var bfscale = d3.scaleLinear()
+.domain([0,0.5,1,1.5,2,2.5,3,3.5,4,5]).range(colors);
 
 var states;
 var apcsdata;
@@ -217,9 +222,9 @@ d3.queue()
 		return d.FIPS;
 	});
 
-	showMap(scale, "%female", p1);
-	showMap(scale, "% black", p2);
-	showMap(scale, "% Black Females", p3);
+	showMap(fscale, "%female", p1);
+	showMap(bscale, "% black", p2);
+	showMap(bfscale, "% Black Females", p3);
 });
 
 function showMap(scale, variable, part) {
@@ -232,7 +237,7 @@ function showMap(scale, variable, part) {
 	var paths = p1.selectAll("path.country").data(states.features);
 	paths.enter().append("path").attr("class", "country")
 	.merge(paths)
-    .style("stroke", "white")
+  .style("stroke", "white")
 	.style("fill", function (state) {
 		var stateData = apcsdata.get(state.id);
 		if (stateData) {
@@ -246,34 +251,39 @@ function showMap(scale, variable, part) {
 
 
 }
-   
+
 // Beginning of linear gradient scales (to use as a legend)
 
 var defs = svg.append("defs");
 
 var linearGradient = defs.append("linearGradient")
     .attr("id", "linear-gradient");
-    
-linearGradient.selectAll("stop") 
-    .data([                             
-        {offset: "0%", color: "#f1eef6"}, 
-        {offset: "20%", color: "#d7b5d8"},  
-        {offset: "40%", color: "#df65b0"}, 
-        {offset: "60%", color: "#dd1c77"}, 
-        {offset: "80%", color: "#5D000F"}  
-      ])                  
+
+linearGradient.selectAll("stop")
+    .data([
+        {offset: "0%", color: "#fcdbe9"},
+        {offset: "10%", color: "#ffcee3"},
+        {offset: "20%", color: "#ffc6de"},
+        {offset: "30%", color: "#ff82b6"},
+        {offset: "40%", color: "#ff89b9"},
+        {offset: "50%", color: "#ff599e"},
+        {offset: "60%", color: "#ff3589"},
+        {offset: "70%", color: "#ff1475"},
+        {offset: "80%", color: "#4c001f"},
+        {offset: "90%", color: "#26000f"},
+      ])
     .enter().append("stop")
-    .attr("offset", function(d) { return d.offset; })   
+    .attr("offset", function(d) { return d.offset; })
     .attr("stop-color", function(d) { return d.color; });
 
-    
+
 //Horizontal gradient
 linearGradient
     .attr("x1", "0%")
     .attr("y1", "0%")
     .attr("x2", "100%")
     .attr("y2", "0%");
-    
+
 // Gradient for female students
 d3.select("#p1").append("rect")
     .attr("x", 385)
@@ -281,7 +291,7 @@ d3.select("#p1").append("rect")
 	.attr("width", 290)
 	.attr("height", 20)
 	.style("fill", "url(#linear-gradient)");
-    
+
 //Add corresponding text
 d3.select("#p1").append("text")
         .attr("x", 382)
@@ -290,15 +300,15 @@ d3.select("#p1").append("text")
         .attr("font-family", "Catamaran")
         .text("0%")
         .style("fill", "gray");
-    
+
 d3.select("#p1").append("text")
         .attr("x", 668)
         .attr("y", 595)
         .attr("font-size", 10)
         .attr("font-family", "Catamaran")
-        .text("25%+")
+        .text("30%+")
         .style("fill", "gray");
-    
+
 d3.select("#p1").append("text")
         .attr("x", 438)
         .attr("y", 550)
@@ -314,7 +324,7 @@ d3.select("#p2").append("rect")
 	.attr("width", 290)
 	.attr("height", 20)
 	.style("fill", "url(#linear-gradient)");
-    
+
 //Add corresponding text
 d3.select("#p2").append("text")
         .attr("x", 382)
@@ -323,15 +333,15 @@ d3.select("#p2").append("text")
         .attr("font-family", "Catamaran")
         .text("0%")
         .style("fill", "gray");
-    
+
 d3.select("#p2").append("text")
         .attr("x", 668)
         .attr("y", 595)
         .attr("font-size", 10)
         .attr("font-family", "Catamaran")
-        .text("25%+")
+        .text("16%+")
         .style("fill", "gray");
-    
+
 d3.select("#p2").append("text")
         .attr("x", 438)
         .attr("y", 550)
@@ -339,7 +349,7 @@ d3.select("#p2").append("text")
         .attr("font-family", "Catamaran")
         .text("Percentage of Test-Takers by State")
         .style("fill", "gray");
-    
+
 // Gradient for black female test takers
 d3.select("#p3").append("rect")
     .attr("x", 385)
@@ -347,7 +357,7 @@ d3.select("#p3").append("rect")
 	.attr("width", 290)
 	.attr("height", 20)
 	.style("fill", "url(#linear-gradient)");
-    
+
 //Add corresponding text
 d3.select("#p3").append("text")
         .attr("x", 382)
@@ -356,15 +366,15 @@ d3.select("#p3").append("text")
         .attr("font-family", "Catamaran")
         .text("0%")
         .style("fill", "gray");
-    
+
 d3.select("#p3").append("text")
         .attr("x", 668)
         .attr("y", 595)
         .attr("font-size", 10)
         .attr("font-family", "Catamaran")
-        .text("25%+")
+        .text("4%+")
         .style("fill", "gray");
-    
+
 d3.select("#p3").append("text")
         .attr("x", 438)
         .attr("y", 550)
@@ -372,11 +382,11 @@ d3.select("#p3").append("text")
         .attr("font-family", "Catamaran")
         .text("Percentage of Test-Takers by State")
         .style("fill", "gray");
-    
-// End of linear gradient scales    
+
+// End of linear gradient scales
 </script>
-    
+
 </body>
-    
-<!-- Linear gradient created with help of https://www.visualcinnamon.com/2016/05/smooth-color-legend-d3-svg-gradient.html -->    
+
+<!-- Linear gradient created with help of https://www.visualcinnamon.com/2016/05/smooth-color-legend-d3-svg-gradient.html -->
 </html>
