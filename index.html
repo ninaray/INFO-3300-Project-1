@@ -458,36 +458,7 @@ var svg = d3.select("#linesvg")
               "translate(30,30)");    
     
 // Parse year
-var parseDate = d3.time.format("%d-%b-%y").parse;
-
-/** Create scales - domain will be created later for timeScale */
-var timeScale = d3.time.scale().range([50, 500]);
-var numberScale = d3.scale.linear().domain([0, 20000]).range([500, 50]);
-
-// Create axes and position them
-var xAxis = d3.svg.axis().scale(timeScale)
-    .orient("bottom").ticks(8);
-
-var yAxis = d3.svg.axis().scale(numberScale)
-    .orient("left").ticks(10);
-
-/** Define the lines before appending them as paths. NOTE: This is where we create functions to define individual data points.
-*/    
-var white = d3.svg.line()   
-    .x(function(d) { return timeScale(d.date); })
-    .y(function(d) { return numberScale(d.white); });
-    
-var black = d3.svg.line()
-    .x(function(d) { return timeScale(d.date); })
-    .y(function(d) { return numberScale(d.black); });
-    
-var asian = d3.svg.line()
-    .x(function(d) { return timeScale(d.date); })
-    .y(function(d) { return numberScale(d.asian); });
-    
-var hispanic = d3.svg.line()
-    .x(function(d) { return timeScale(d.date); })
-    .y(function(d) { return numberScale(d.hispanic); });
+var parseDate = d3.timeParse("%d-%b-%y");
 
 // Pass in data    
 d3.csv("data.csv", function(error, data) {
@@ -495,8 +466,37 @@ d3.csv("data.csv", function(error, data) {
         d.date = parseDate(d.date);
     });
 
-/** Given our previously defined timeScale, we define our domain after passing in data */
-timeScale.domain(d3.extent(data, function(d) { return d.date; }));
+
+/** Create scales - domain will be created later for timeScale */
+var timeScale = d3.scaleTime().domain(d3.extent(data, function(d) { return d.date; })).range([50, 500]);
+var numberScale = d3.scaleLinear().domain([0, 20000]).range([500, 50]);
+
+// Create axes and position them
+var xAxis = d3.axisBottom(timeScale);
+
+var yAxis = d3.axisLeft(numberScale);
+
+/** Define the lines before appending them as paths. NOTE: This is where we create functions to define individual data points.
+*/    
+var white = d3.line()   
+    .x(function(d) { return timeScale(d.date); })
+    .y(function(d) { return numberScale(d.white); });
+    
+var black = d3.line()
+    .x(function(d) { return timeScale(d.date); })
+    .y(function(d) { return numberScale(d.black); });
+    
+var asian = d3.line()
+    .x(function(d) { return timeScale(d.date); })
+    .y(function(d) { return numberScale(d.asian); });
+    
+var hispanic = d3.line()
+    .x(function(d) { return timeScale(d.date); })
+    .y(function(d) { return numberScale(d.hispanic); });
+
+
+
+
 
 // Add our demographic paths
     svg.append("path")
