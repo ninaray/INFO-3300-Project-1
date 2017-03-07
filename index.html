@@ -106,7 +106,15 @@ span {
     fill: none;
     stroke: grey;
     stroke-width: 1;
-}    
+} 
+
+.x_axis, .y_axis {
+    font-family: "Catamaran";
+    color: #2a2a2a;
+    font-size: 12px;
+}   
+
+
     
 </style>
 
@@ -529,13 +537,13 @@ var hispanic = d3.line()
 
     // Add the X Axis
     svg.append("g")
-        .attr("class", "x axis")
+        .attr("class", "x_axis")
         .attr("transform", "translate(0,500)")
         .call(xAxis);
 
     // Add the Y Axis
     svg.append("g")
-        .attr("class", "y axis")
+        .attr("class", "y_axis")
         .attr("transform", "translate(50,0)")
         .call(yAxis);
 
