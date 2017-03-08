@@ -8,8 +8,6 @@
 <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'/>
 <link href='https://fonts.googleapis.com/css?family=Alegreya Sans SC' rel='stylesheet' type='text/css'/>
 
-<!--<link rel="stylesheet" type="text/css" href="styles/style.css">-->
-
 <style>
 
 svg {
@@ -99,6 +97,16 @@ span {
     line-height: 30px;
     float: right;
 }
+    
+/** CREDITS DIV */
+    
+#bottom {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    font-size: 120%;
+    }
 
 /* Thin out axes lines for line graph */
 .axis path,
@@ -457,9 +465,9 @@ d3.select("#p3").append("text")
 <!-- BEGINNING OF LINE GRAPH D3 -->
 <div id="nationtop">Number of Students Taking the AP CS Exam Each Year</div>
 <svg id="linesvg" height="600" width="600" style="padding-left:100px"></svg>
-    </svg>
+    
 <div id="nation">
-    <p>The <span>overall</span> number of students taking the AP CS Exam across the nation <span>increases</span> over the period of 2006-2013. Specifically,  <span>8000 more White </span> students, <span>5000 more Asian </span> students, <span> 1400 more Hispanic </span> and <span>400 more Black </span> students took the AP CS exam in the year of 2013 comparing to the year of 2006.
+    <p>The <span>overall</span> number of students taking the AP CS Exam across the nation <span>increased</span> over the period of 2006-2013. Specifically,  <span>8,000 more White </span> students, <span>5,000 more Asian </span> students, <span> 1,400 more Hispanic </span> and <span>400 more African American </span> students took the AP CS exam in the year of 2013 comparing to the year of 2006. Note that white students experienced a near <span>200%</span> in test participation over the 5 years - and Asian student participation nearly <span>tripled</span>. Hispanic student participation nearly <span>doubled</span>, but the number of students taking the test in 2013 barely matches the number of Asian students testing back in 2006, with a <span>difference of only 438 students</span>. Over the 5 years, African American student participation increased by <span>163.2%</span>, but still remained the lowest of all students participating in 2013 with <span>1,090 African American students</span>.
 </div>
 
 
@@ -506,10 +514,6 @@ var asian = d3.line()
 var hispanic = d3.line()
     .x(function(d) { return timeScale(d.date); })
     .y(function(d) { return numberScale(d.hispanic); });
-
-
-
-
 
 // Add our demographic paths
     svg.append("path")
@@ -587,12 +591,14 @@ var hispanic = d3.line()
       svg.append("text")
           .attr("x", 505)
           .attr("y", 480)
-          .text("Black")
+          .text("AA")
           .style("fill", "black");
 });
 
 </script>
 
+<div id="bottom">All data courtesy of the <a href="http://home.cc.gatech.edu/ice-gt/556">Institute for Computing Education at Georgia Tech (ICE-GT)</a>.</div>    
+    
 </body>
 <!-- U.S. Map from INFO 3300 022217 Lecture -->
 <!-- Linear gradient created with help of https://www.visualcinnamon.com/2016/05/smooth-color-legend-d3-svg-gradient.html -->
