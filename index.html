@@ -55,7 +55,7 @@ span {
     letter-spacing: 1px;
 }
 
-#female {
+#female,#nation {
     width: 400px;
     height: 600px;
     margin-right: 20px;
@@ -65,7 +65,7 @@ span {
 }
 
 /** BLACK DIV */
-#blacktop {
+#blacktop,#nationtop {
     width: 100%;
     text-align: center;
     font-size: 2em;
@@ -455,8 +455,13 @@ d3.select("#p3").append("text")
 </script>
 
 <!-- BEGINNING OF LINE GRAPH D3 -->
+<div id="nationtop">Number of Students Taking the AP CS Exam Each Year</div>
+<svg id="linesvg" height="600" width="600" style="padding-left:100px"></svg>
+    </svg>
+<div id="nation">
+    <p>The <span>overall</span> number of students taking the AP CS Exam across the nation <span>increases</span> over the period of 2006-2013. Specifically,  <span>8000 more White </span> students, <span>5000 more Asian </span> students, <span> 1400 more Hispanic </span> and <span>400 more Black </span> students took the AP CS exam in the year of 2013 comparing to the year of 2006.
+</div>
 
-<svg id="linesvg" height="600" width="600"></svg>
 
 <script>
 
@@ -576,13 +581,13 @@ var hispanic = d3.line()
       svg.append("text")
           .attr("x", 505)
           .attr("y", 450)
-          .text("Black")
+          .text("Hispanic")
           .style("fill", "black");
 
       svg.append("text")
           .attr("x", 505)
           .attr("y", 480)
-          .text("Hispanic")
+          .text("Black")
           .style("fill", "black");
 });
 
